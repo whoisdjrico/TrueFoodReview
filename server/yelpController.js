@@ -10,7 +10,11 @@ var yelpController = {
   getData: function(req, res, next) {
     var yelpData = [];  
     // See http://www.yelp.com/developers/documentation/v2/search_api
-    yelp.search({term: "Restaurant", location: "Playa Vista, ca", radius_filter: 8000}, function(error, data) {
+    yelp.search({
+      term: "Restaurant", 
+      location: "Playa Vista, ca", 
+      radius_filter: 8000
+    }, function(error, data) {
       if(error) console.log(error);
      
       data.businesses.forEach(function(item){
