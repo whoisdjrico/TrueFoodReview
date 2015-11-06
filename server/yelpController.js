@@ -30,7 +30,7 @@ var yelpController = {
         console.log(obj);
       });
       // console.log(yelpData);
-      mydb(yelpData);
+      mydb.yelp(yelpData);
       res.send(yelpData);
   });
 
