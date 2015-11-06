@@ -8,23 +8,31 @@ var yelp = require("yelp").createClient({
 
 var yelpController = {
   getData: function(req, res, next) {
-    
-
-
-  // See http://www.yelp.com/developers/documentation/v2/search_api
-  yelp.search({term: "food", location: "Montreal"}, function(error, data) {
-    console.log(error);
-    console.log(data);
-   
+    var yelpData = [];  
+    // See http://www.yelp.com/developers/documentation/v2/search_api
+    yelp.search({term: "Restaurant", location: "Playa Vista, ca", radius_filter: 8000}, function(error, data) {
+      if(error) console.log(error);
+     
+      data.businesses.forEach(function(item){
+        var obj = {};
+        obj.name = item.name;
+        obj.rating = item.rating;
+        obj.review_count = item.review_count;
+        obj.lat = item.location.coordinate.latitude;
+        obj.long = item.location.coordinate.longitude;
+        obj.address = item.location.address;
+        obj.city = item.location.city;
+        obj.state = item.location.state_code;
+        obj.postal_code = item.location.postal_code;
+        yelpData.push(obj);
+        console.log(obj);
+      });   
+      res.send(yelpData);
   });
 
-  // See http://www.yelp.com/developers/documentation/v2/business
-  yelp.business("yelp-san-francisco", function(error, data) {
-    console.log(error);
-    console.log(data);
-  });
-   res.send('hello')
 
+
+   //https://api.yelp.com/v2/search/?term=Restaurant&location=Playa Vista, CA&radius_filter=8000
 
 
  
