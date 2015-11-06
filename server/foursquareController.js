@@ -1,4 +1,6 @@
 var request = require('request');
+var mydb = require('./postgres.js');
+var Promise = require('bluebird');
 var fourSquareController = {
 
 	getData: function(req, res, next) {
@@ -11,33 +13,34 @@ var fourSquareController = {
 			if (error) {
 				console.log(error);
 			}
+			var promises = new Promise(function(resolve, reject) {
+				var stats = JSON.parse(data).response.groups[0].items;
 
-			var stats = JSON.parse(data).response.groups[0].items;
-
-			for(var i = 0; i < stats.length; i++) {
-				var obj = {};
-				obj.name = stats[i].venue.name;
-		        obj.rating = stats[i].venue.rating / 2;
-		        obj.review_count = stats[i].venue.ratingSignals;
-		        obj.lat = stats[i].venue.location.lat;
-		        obj.long = stats[i].venue.location.lng;
-		        obj.address = stats[i].venue.location.address;
-		        obj.city = stats[i].venue.location.city;
-		        obj.state = stats[i].venue.location.state;
-		        obj.postal_code = stats[i].venue.location.postalCode;
-				foursquareData.push(obj);
-			}
-
-			console.log(foursquareData);
-
+				for(var i = 0; i < stats.length; i++) {
+					var obj = {};
+					obj.name = stats[i].venue.name;
+			        obj.rating = stats[i].venue.rating / 2;
+			        obj.review_count = stats[i].venue.ratingSignals;
+			        obj.lat = stats[i].venue.location.lat;
+			        obj.long = stats[i].venue.location.lng;
+			        obj.address = stats[i].venue.location.address;
+			        obj.city = stats[i].venue.location.city;
+			        obj.state = stats[i].venue.location.state;
+			        obj.postal_code = stats[i].venue.location.postalCode;
+					foursquareData.push(obj);
+				}
+				resolve(foursquareData);
+			})
+			promises.then(function(result) {
+				mydb.foursquare(foursquareData);
+				res.send(foursquareData);
+			})
 		});
-
-		res.send(foursquareData);
 	}
 
-}
+};
 
     // get request in the url returns the huge data on the site
     // learn the parameters of the foursquare
     // brush up on async
-module.exports = fourSquareController; 
+module.exports = fourSquareController;

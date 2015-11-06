@@ -1,3 +1,5 @@
+var mydb = require('./postgres.js')
+
 var yelp = require("yelp").createClient({
   consumer_key: "eZS4YZtBkwGBT1qo_6sugQ",
   consumer_secret: "mS47iXf3aj-YlFEdYDPILaekjq8",
@@ -30,7 +32,9 @@ var yelpController = {
         yelpData.push(obj);
         console.log(obj);
       });
-    //  mydb(yelpData);
+
+      mydb.yelp(yelpData);
+
       res.send(yelpData);
   });
 
