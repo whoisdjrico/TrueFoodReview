@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.12.4",
+    "foursquarevenues": "^2.0.0",
     "nodemon": "^1.8.1",
+    "request": "^2.65.0",
     "sequelize": "^3.13.0",
     "yelp": "^0.2.0"
   }
