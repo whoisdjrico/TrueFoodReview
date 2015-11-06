@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var yelpController = require('./yelpController');
 var foursquareController = require('./foursquareController');
+var mydb = require('./postgres-orm');
 
 
 
@@ -15,4 +16,3 @@ app.use(express.static(path.join(__dirname, './../client/')));
 app.listen(3000);
 
 module.exports = app;
-
