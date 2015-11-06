@@ -11,6 +11,8 @@
   "dependencies": {
     "express": "^4.12.4",
     "nodemon": "^1.8.1",
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
     "sequelize": "^3.13.0",
     "yelp": "^0.2.0"
   }
