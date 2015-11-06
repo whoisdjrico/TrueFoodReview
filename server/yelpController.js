@@ -1,5 +1,7 @@
+var mydb = require('./postgres.js')
+
 var yelp = require("yelp").createClient({
-  consumer_key: "eZS4YZtBkwGBT1qo_6sugQ", 
+  consumer_key: "eZS4YZtBkwGBT1qo_6sugQ",
   consumer_secret: "mS47iXf3aj-YlFEdYDPILaekjq8",
   token: "LpqL9TevnnYv-kUe2bDcWfKTUKf1AO4k",
   token_secret: "_jIqJooamsbGQ2ew9sG7M0-bddI"
@@ -8,11 +10,11 @@ var yelp = require("yelp").createClient({
 
 var yelpController = {
   getData: function(req, res, next) {
-    var yelpData = [];  
+    var yelpData = [];
     // See http://www.yelp.com/developers/documentation/v2/search_api
     yelp.search({term: "Restaurant", location: "Playa Vista, ca", radius_filter: 8000}, function(error, data) {
       if(error) console.log(error);
-     
+
       data.businesses.forEach(function(item){
         var obj = {};
         obj.name = item.name;
@@ -26,7 +28,9 @@ var yelpController = {
         obj.postal_code = item.location.postal_code;
         yelpData.push(obj);
         console.log(obj);
-      });   
+      });
+      // console.log(yelpData);
+      mydb(yelpData);
       res.send(yelpData);
   });
 
@@ -35,15 +39,10 @@ var yelpController = {
    //https://api.yelp.com/v2/search/?term=Restaurant&location=Playa Vista, CA&radius_filter=8000
 
 
- 
+
 
 
   }//closes getData
 }//closes scrapeController
 
 module.exports = yelpController;
-
-
-
-
- 
