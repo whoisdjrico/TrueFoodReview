@@ -6,7 +6,7 @@ var foursquareController = require('./foursquareController');
 
 
 app.get('/yelp', yelpController.getData);
-app.get('/foursquare', foursquareController.);
+app.get('/foursquare', foursquareController.getData);
 
 
 
