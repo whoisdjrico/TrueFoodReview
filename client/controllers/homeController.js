@@ -14,5 +14,5 @@ function HomeController($scope) {
 
 
 
-  }
+  };
 }

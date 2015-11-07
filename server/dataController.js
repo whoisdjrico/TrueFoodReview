@@ -20,12 +20,12 @@ module.exports = function(req, res, next) {
     sequelize.query("SELECT * FROM places")
     .then(function(dat) {
       // console.log(typeof dat);
-      console.log("SUCCESS!");
+      // console.log("SUCCESS!");
       resolve(JSON.stringify(dat));
     });
   })
   return promises.then(function(result) {
-    console.log(result);
+    // console.log(result);
     res.send(result);
   })
 };

@@ -15,6 +15,6 @@ function configFunction($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: './partials/home.html',
       controller: 'HomeController'
-    })
+    });
 
 }

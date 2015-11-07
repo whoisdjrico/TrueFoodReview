@@ -29,7 +29,7 @@ var yelpController = {
         obj.state = item.location.state_code;
         obj.postal_code = item.location.postal_code;
         yelpData.push(obj);
-        console.log(JSON.stringify(obj));
+        // console.log(JSON.stringify(obj));
       });
 
       mydb(yelpData);
@@ -37,14 +37,6 @@ var yelpController = {
 
       setTimeout(function(){next();}, 4000);
   });
-
-
-
-   //https://api.yelp.com/v2/search/?term=Restaurant&location=Playa Vista, CA&radius_filter=8000
-
-
-
-
 
   }//closes getData
 }//closes scrapeController
