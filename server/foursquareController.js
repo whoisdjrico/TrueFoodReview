@@ -30,11 +30,12 @@ var fourSquareController = {
 					foursquareData.push(obj);
 				}
 				resolve(foursquareData);
-			})
+			});
 			promises.then(function(result) {
-				mydb(foursquareData);
-				res.send(foursquareData);
-			})
+				mydb(result);
+				// res.send(foursquareData);
+				setTimeout(function(){next();}, 4000);
+			});
 		});
 	}
 

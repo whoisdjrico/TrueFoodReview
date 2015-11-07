@@ -8,13 +8,12 @@ var mydb = require('./postgres-orm');
 
 
 
-// app.get('/', yelpController.getData, foursquareController.getData);
-app.get('/yelp', yelpController.getData);
-app.get('/foursquare', foursquareController.getData);
-// app.get('/address', addressController.getData);
-app.get('/data', dataController)
-app.use(express.static(path.join(__dirname, './../client/')));
+app.get('/data', yelpController.getData, foursquareController.getData, dataController);
 
+app.use(express.static(path.join(__dirname, './../client/')));
+app.get('/', function(req, res) {
+  res.render('index.html');
+});
 
 app.listen(3000);
 

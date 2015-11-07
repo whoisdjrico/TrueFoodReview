@@ -33,9 +33,9 @@ var yelpController = {
       });
 
       mydb(yelpData);
+      // res.send(yelpData);
 
-      res.send(yelpData);
-      next();
+      setTimeout(function(){next();}, 4000);
   });
 
 

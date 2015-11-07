@@ -22,7 +22,7 @@ function setMarkers(map) {
         // console.log(JSON.parse(data));
         // console.log(data);
         var parsed = JSON.parse(data);
-        fulfil(parsed[0]);    
+        fulfil(parsed[0]);
       },
       error: function(err) {
         console.log(err);
