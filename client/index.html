@@ -9,12 +9,12 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <!-- // <script type="text/javascript" src="./factories/infoFactory.js"></script> -->
   <script type="text/javascript" src="./controllers/homeController.js"></script>
- 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="./app.js"></script>
   <link rel="stylesheet" type="text/css" href="animate.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
    <link rel="stylesheet" href="style.css">
-
+   <script src="//cdn.jsdelivr.net/rsvp/3.0.6/rsvp.js"></script>
 </head>
 
 <body>
@@ -28,15 +28,7 @@
     <div class="container" ui-view></div>
   </div>
   <div id='map'></div>
-  <script>
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 33.97914, lng: -118.41480705731},
-      zoom: 13
-    });
-  }
-  </script>
+  <script src="./map.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI_64KA1ywM_tFnCa2s-SPB5RLcYVRZ4Q&callback=initMap"></script>
 
 </body>

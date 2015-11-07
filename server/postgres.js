@@ -69,7 +69,6 @@ module.exports = {
     });
   },
 
-
   foursquare: function(data) {
     RatingsFoursquare.sync({force: true}).then(function() {
       data.forEach(function(item) {

@@ -1,7 +1,7 @@
 var app = angular
   .module('myApp',[
     'ui.router',
-    'TrueFoodReview.InfoFactory',
+    // 'TrueFoodReview.InfoFactory',
     'TrueFoodReview.HomeController'
 
     ]);
@@ -16,6 +16,5 @@ function configFunction($stateProvider, $urlRouterProvider) {
       templateUrl: './partials/home.html',
       controller: 'HomeController'
     })
-  
-}
 
+}
