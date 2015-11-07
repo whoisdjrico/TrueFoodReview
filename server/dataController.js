@@ -9,7 +9,7 @@ var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
 
 
 sequelize.authenticate().then(function(err, data) {
-  console.log('Connected with PostgreSQL Raw - test');
+  console.log('Connected with PostgreSQL - test');
 }).catch(function(err) {
   console.log(err);
 })

@@ -7,8 +7,8 @@ var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
 });
 
 // HERE'S THE ONE TABLE WITH ALL DATA
-var Place = sequelize.define('place', {
-  name: {type: Sequelize.STRING, unique: true},
+var PlaceYelp = sequelize.define('placeYelp', {
+  name: {type: Sequelize.STRING},
   rating: {type: Sequelize.FLOAT},
   review_count: {type: Sequelize.INTEGER},
   lat: {type: Sequelize.FLOAT},
@@ -17,7 +17,7 @@ var Place = sequelize.define('place', {
   city: {type: Sequelize.STRING},
   state: {type: Sequelize.STRING},
   postal_code: {type: Sequelize.INTEGER}
-})
+});
 
 sequelize.authenticate().then(function(err, data) {
   console.log('Connected with PostgreSQL');
@@ -27,11 +27,17 @@ sequelize.authenticate().then(function(err, data) {
 
 
 
-module.exports = function(data) {
+module.exports =
+
+
+
+function(data)  {
   Place.sync().then(function() {
     data.forEach(function(item) {
       var result = {
         name: item.name,
+        rating: item.rating,
+        review_count: item.review_count,
         lat: item.lat,
         long: item.long,
         address: item.address[0],
