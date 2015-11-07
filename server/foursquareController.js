@@ -32,7 +32,7 @@ var fourSquareController = {
 				resolve(foursquareData);
 			})
 			promises.then(function(result) {
-				mydb.foursquare(foursquareData);
+				mydb(foursquareData);
 				res.send(foursquareData);
 			})
 		});

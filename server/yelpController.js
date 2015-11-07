@@ -32,7 +32,7 @@ var yelpController = {
         console.log(JSON.stringify(obj));
       });
 
-      mydb.yelp(yelpData);
+      mydb(yelpData);
 
       res.send(yelpData);
       next();
