@@ -1,4 +1,44 @@
 #map {
-    width: 500px;
-    height: 300px;
+    width: 800px;
+    height: 725px;
+ 	margin-right: auto;
+ 	margin-left: auto;
+    text-align: center;
+​
+}
+
+#googft-legend {
+  position: relative;
+  bottom: 240px;
+  left: 220px;
+  background: white;
+  display: inline-block;
+  padding: 0 20px 20px 20px;
+  border: 1px solid black;
+}
+
+.special {
+  font-weight: bold;
+}
+.container-fluid {
+	display: block;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+	cursor: default;
+	color: #999999;
+​
+}
+.footer {
+	text-align: right;
+	background-color: #101010;
+	color:  #999999;
+	margin-top: 20px;
+​
+}
+.jumbotron {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 40px;
 }
