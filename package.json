@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "test": "tape tests/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -33,5 +34,8 @@
     "tape": "^4.2.2",
     "watchify": "^3.6.0",
     "yelp": "^0.2.0"
+  },
+  "devDependencies": {
+    "tape": "^4.2.2"
   }
 }
