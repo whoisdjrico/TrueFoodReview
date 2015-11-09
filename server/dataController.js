@@ -1,6 +1,7 @@
 var mydb = require('./postgres.js');
 var Sequelize = require('sequelize');
 var Promise = require('bluebird');
+var config = require('../config.json');
 
 var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
   host: 'localhost',

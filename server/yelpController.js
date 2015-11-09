@@ -1,11 +1,6 @@
 var mydb = require('./postgres.js');
-
-var yelp = require("yelp").createClient({
-  consumer_key: "eZS4YZtBkwGBT1qo_6sugQ",
-  consumer_secret: "mS47iXf3aj-YlFEdYDPILaekjq8",
-  token: "LpqL9TevnnYv-kUe2bDcWfKTUKf1AO4k",
-  token_secret: "_jIqJooamsbGQ2ew9sG7M0-bddI"
-});
+var config = require('../config.json');
+var yelp = require("yelp").createClient(config.yelp);
 
 
 var yelpController = {

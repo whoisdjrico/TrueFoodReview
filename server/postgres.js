@@ -1,5 +1,6 @@
 var Sequelize = require('sequelize');
 var express = require('express');
+var config = require('../config.json');
 
 var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
   host: 'localhost',
