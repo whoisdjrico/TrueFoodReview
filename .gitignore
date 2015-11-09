@@ -33,3 +33,9 @@ configure.json
 .DS_Store
 
 ./db
+=======
+# Database Folder
+db
+
+#config file
+config.json

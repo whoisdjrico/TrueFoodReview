@@ -4,6 +4,7 @@ var path = require('path');
 var yelpController = require('./yelpController');
 var dataController = require('./dataController');
 var foursquareController = require('./foursquareController');
+var config = require('../config.json');
 
 
 
