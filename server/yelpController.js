@@ -1,4 +1,4 @@
-var mydb = require('./postgres.js')
+var mydb = require('./postgres.js');
 
 var yelp = require("yelp").createClient({
   consumer_key: "eZS4YZtBkwGBT1qo_6sugQ",
@@ -6,7 +6,6 @@ var yelp = require("yelp").createClient({
   token: "LpqL9TevnnYv-kUe2bDcWfKTUKf1AO4k",
   token_secret: "_jIqJooamsbGQ2ew9sG7M0-bddI"
 });
-var mydb = require('./postgres-orm');
 
 
 var yelpController = {
@@ -30,21 +29,14 @@ var yelpController = {
         obj.state = item.location.state_code;
         obj.postal_code = item.location.postal_code;
         yelpData.push(obj);
-        console.log(obj);
+        // console.log(JSON.stringify(obj));
       });
 
       mydb.yelp(yelpData);
+      // res.send(yelpData);
 
-      res.send(yelpData);
+      setTimeout(function(){next();}, 4000);
   });
-
-
-
-   //https://api.yelp.com/v2/search/?term=Restaurant&location=Playa Vista, CA&radius_filter=8000
-
-
-
-
 
   }//closes getData
 }//closes scrapeController

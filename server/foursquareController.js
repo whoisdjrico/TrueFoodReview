@@ -6,7 +6,7 @@ var fourSquareController = {
 	getData: function(req, res, next) {
 		var queryURL = 'https://api.foursquare.com/v2/venues/explore?ll=33.97914,-118.41480705731&radius=8000&query=food&client_id=2QFBHZM23MLCX0WRQATSMNV1XSV41LONUF1AOUEHADZVZZBI&client_secret=5TXGRZBINMI4KWOPFFELJ1UUUP3YMRM0VKZJ4XKMRTMQZ4XU&v=20151105';
 
-
+// console.log("HERE);")
 		var foursquareData = [];
 
 		request(queryURL, function(error, response, data) {
@@ -30,11 +30,12 @@ var fourSquareController = {
 					foursquareData.push(obj);
 				}
 				resolve(foursquareData);
-			})
+			});
 			promises.then(function(result) {
-				mydb.foursquare(foursquareData);
-				res.send(foursquareData);
-			})
+				mydb.foursquare(result);
+				// console.log(result);
+				setTimeout(function(){next();}, 4000);
+			});
 		});
 	}
 
