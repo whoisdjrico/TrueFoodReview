@@ -31,3 +31,5 @@ bower_components
 configure.json
 
 .DS_Store
+
+./db
