@@ -28,13 +28,10 @@ module.exports = function(req, res, next) {
         for(var a = 0, b = four[0].length; a < b; a++) {
           for(var i = 0, j = yelp[0].length; i < j; i++) {
             if(four[0][i].name === yelp[0][a].name) {
-              // console.log('found ' + four[0][i].name + " and " + yelp[0][a].name);
-              // console.log(combinedInfo[0][a].rating);
+
               combinedInfo[0][i].rating = ((combinedInfo[0][i].rating * combinedInfo[0][i].review_count + four[0][a].rating * four[0][a].review_count)/(combinedInfo[0][i].review_count + four[0][a].review_count)).toFixed(2);
               combinedInfo[0][i].review_count += four[0][a].review_count;
-              // console.log(combinedInfo[0][a].review_count);
               counter = 0;
-              // four[0][i] = null;
             }
             else {
               counter++;
@@ -53,9 +50,6 @@ module.exports = function(req, res, next) {
           }
         }
         console.log('here it is');
-
-
-
       })
     });
   });

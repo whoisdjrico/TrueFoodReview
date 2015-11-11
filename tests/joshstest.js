@@ -1,19 +1,30 @@
+// var express = require('express');
+// var app = express();
 var test = require('tape');
 var path = require('path');
-var server = require('./../server/server.js')
+var server = require('../server/server.js');
+var request = require('supertest');
 
-// test('basic arithmetic', function (t) {
-//     t.plan(3);
-//
-//     t.equal(2 + 3, 5);
-//     t.equal(7 * 8 + 9, 65);
-//     t.equal(9 + 4, 13);
+// test('First test!', function (t) {
+//   t.end();
 // });
 
-test('basic arithmetic', function (t) {
-    t.plan(3);
 
-    t.equal(2 + 3, 5);
-    t.equal(7 * 8 + 9, 65);
-    t.equal(9 + 4, 13);
+test('Connected properly!', function (t) {
+  request(server)
+    .get('/')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    // .listen(3000)
+    // .timeoutAfter(5000)
+    .end(function (err, res) {
+      t.end();
+    });
+
+    // .end(function (err, res) {
+    //   var routes = ['/', '/data'];
+    //   t.error(err, 'No error');
+    //   t.same(res.body, routes, 'Routes as expected');
+    //   t.end();
+    // });
 });
