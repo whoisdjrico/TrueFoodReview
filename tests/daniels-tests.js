@@ -20,32 +20,25 @@ test('API data request successful', function (t) {
   t.end();
 });
 
-
-//User Model was synced to database
-test('User Model was synced to database', function (t) {
-  t.plan(1);
-  t.equal(userController, true);
-  t.end();
-});
-
 //User was created to database
 test('User was created to database', function (t) {
   t.plan(1);
-  t.notEqual(userController.createUser);
-  t.end();
-});
-
-//Session Model was created
-test('Session Model was synced to database', function (t) {
-  t.plan(1);
-  t.equal(sessionController, true);
+  t.notEqual(userController.createUser,
+    app.get('/', function (req, res) {
+      res.redirect('../../client/index.html');
+    })
+  );
   t.end();
 });
 
 //Session was created to database
 test('Session was created to database', function (t) {
   t.plan(1);
-  t.notEqual(sessionController.createSession);
+  t.notEqual(sessionController.createSession,
+    app.get('/', function (req, res) {
+      res.redirect('../../client/index.html');
+    })
+  );
   t.end();
 });
 

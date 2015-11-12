@@ -14,7 +14,7 @@ var sessionController = {
     obj.expires = new Date();
     Session.create(obj, function (err) {
       if (err) { res.redirect('../../client/index.html'); }
-      res.redirect('../../client/applicaiton.html');
+      res.redirect('../../client/mainnpm.html');
     });
   }
 
