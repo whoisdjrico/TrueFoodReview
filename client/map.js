@@ -1,4 +1,3 @@
-
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 33.97914, lng: -118.41480705731},
@@ -11,5 +10,4 @@ function initMap() {
     }
   });
   layer.setMap(map);
-
 }

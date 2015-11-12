@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "test": "tape tests/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "bluebird": "^3.0.5",
     "bootstrap": "^3.3.5",
     "browserify": "^12.0.1",
+    "cookies": "^0.5.1",
     "ecstatic": "^1.2.0",
     "express": "^4.12.4",
     "foursquarevenues": "^2.0.0",
@@ -35,6 +37,7 @@
     "yelp": "^0.2.0"
   },
   "devDependencies": {
+
     "path": "^0.12.7",
     "supertest": "^1.1.0",
     "tape": "^4.2.2"
