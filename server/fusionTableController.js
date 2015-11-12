@@ -9,23 +9,14 @@ var fusionTableController = {
       if(error) console.log(error);
 
       var fusionTable = JSON.parse(data);
-      console.log(fusionTable.type);
+      console.log(fusionTable);
 
-      var full = [];
-      fusionTable.type.forEach(function(item){
-      //   var obj = {};
-      //   obj.name = item.name;
-      //   obj.address = item.address;
-      //   obj.city = item.city;
-      //   obj.state = item.state;
-      //   obj.postal_code = item.postal_code;
-      //   obj.phone = item.phone;
-      //   obj.reserve_url = item.reserve_url;
-      //   obj.mobile_reserve = item.mobile_reserve;
-      //   obj.image_url = item.image_url;
-      //   full.push(obj);
-      //   // console.log(JSON.stringify(obj));
-      });
+      // var full = [];
+      // var obj = {};
+      // fusionTable.columns.forEach(function(item){
+      //   full.push(item);
+      // console.log(JSON.stringify(full));
+      // });
     });
   }
 }
