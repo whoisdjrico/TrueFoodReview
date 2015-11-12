@@ -23,4 +23,4 @@ var Session = sequelize.define('session',
   }
 );
 
-module.exports = Session.sync({force: true});
+module.exports = Session.sync();
