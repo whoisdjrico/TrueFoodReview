@@ -14,7 +14,9 @@ var userController = {
   createUser: function (req, res, next) {
     //create new user in Postgres database 'mydb', 'student', 'ilovetesting'
     User.create({
-      username: req.body.username,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
       password: req.body.password
     });
     next();
@@ -24,7 +26,9 @@ var userController = {
     //searches Postgres database for username and password to verify and redirect user
     User.find(
       {
-        username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
         password: req.body.password
       },
        errorVerify
