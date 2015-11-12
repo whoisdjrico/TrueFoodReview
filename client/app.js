@@ -27,7 +27,14 @@ function configFunction($stateProvider, $urlRouterProvider) {
     .state('signup', {
         url: '/signup',
         templateUrl: './views/signup.html',
-        controller: 'SignUpController as vm',
+        controller: 'SignUpController',
+        controllerAs: 'vm'
+    })
+
+    .state('main', {
+        url: '/main',
+        templateUrl: './views/main.html',
+        controller: 'MapController',
         controllerAs: 'vm'
     })
 
