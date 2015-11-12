@@ -8,10 +8,20 @@ var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
 //create Model-type-User for Postgres
 var User = sequelize.define('user',
   {
-    username: {
+    firstName: {
       type: String,
       unique: true,
-      field: 'username'
+      field: 'first name '
+    },
+    LastName: {
+      type: String,
+      unique: true,
+      field: 'last name'
+    },
+    email: {
+      type: String,
+      unique: true,
+      field: 'email'
     },
     password: {
       type: String,
