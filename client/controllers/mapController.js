@@ -1,5 +1,3 @@
-
-
 var app = angular
   .module('TrueFoodReview.MapController', [])
   .controller('MapController', function() {
