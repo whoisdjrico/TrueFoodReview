@@ -6,12 +6,12 @@ var app = angular
 
       this.login = function() {
       console.log("Sending Request to server...");
-      
-      if (this.loginForm.$valid) {
-        console.log("Sending Request to server...");
-      }
-      else {
-        this.loginForm.submitted = true;
-      }
+
+      // if (this.loginForm.$valid) {
+      //   console.log("Sending Request to server...");
+      // }
+      // else {
+      //   this.loginForm.submitted = true;
+      // }
   };
 });

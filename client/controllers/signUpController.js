@@ -7,11 +7,11 @@ var app = angular
       this.signup = function() {
       console.log("Sending Request to server...");
 
-      if (this.signupForm.$valid) {
-        console.log("Sending Request to server...");
-      }
-      else {
-        this.signupForm.submitted = true;
-      }
+      // if (this.signupForm.$valid) {
+      //   console.log("Sending Request to server...");
+      // }
+      // else {
+      //   this.signupForm.submitted = true;
+      // }
   };
 });
