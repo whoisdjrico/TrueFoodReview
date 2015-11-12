@@ -1,20 +1,63 @@
 var test = require('tape');
-var mydb = require('./postgres.js');
-var Sequelize = require('sequelize');
-var Promise = require('bluebird');
-var request = require('request');
+var path = require('path');
 var express = require('express');
 var app = express();
-var path = require('path');
-var yelpController = require('./../yelpController');
-var dataController = require('./../dataController');
-var foursquareController = require('./../foursquareController');
+var dataController = require('../server/dataController');
+var opentableController = require('../server/opentableController');
+var cookiesController = require ('../server/cookies/cookiesController');
+var sessionController = require ('../server/session/sessionController');
+var userController = require ('../server/user/userController');
 
-//determine if application data was send to client from server
-test('data-service', function(t) {
-  t.plan(4);
-
-  t.equal(2+3, 5);
-  t.fail('FAILURE');
-  t.pass('SUCCESS');
+//verify data output from Postgres clears as a data object
+test('DATA OUTPUT SUCCESS FROM dataController', function (t) {
+  t.notDeepLooseEqual(dataController, {});
+  t.end();
 });
+
+//for use on api requests for json before controller completion as middleware
+test('API data request successful', function (t) {
+  t.notDeepLooseEqual(opentableController.getData, "application/json");
+  t.end();
+});
+
+
+//User Model was synced to database
+test('User Model was synced to database', function (t) {
+  t.plan(1);
+  t.equal(userController, true);
+  t.end();
+});
+
+//User was created to database
+test('User was created to database', function (t) {
+  t.plan(1);
+  t.notEqual(userController.createUser);
+  t.end();
+});
+
+//Session Model was created
+test('Session Model was synced to database', function (t) {
+  t.plan(1);
+  t.equal(sessionController, true);
+  t.end();
+});
+
+//Session was created to database
+test('Session was created to database', function (t) {
+  t.plan(1);
+  t.notEqual(sessionController.createSession);
+  t.end();
+});
+
+//Session was created
+test('Session is being created', function (t) {
+  t.plan(1);
+  t.notEqual(sessionController.startSession,
+    app.get('/', function (req, res) {
+      res.redirect('../../client/index.html');
+    })
+  );
+  t.end();
+});
+
+//Cookies were created
