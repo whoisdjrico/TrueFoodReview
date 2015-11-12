@@ -1,9 +1,9 @@
 var app = angular
   .module('myApp',[
     'ui.router',
-    // 'TrueFoodReview.InfoFactory',
     'TrueFoodReview.HomeController',
     'TrueFoodReview.LoginController'
+    // 'TrueFoodReview.SignUpController'
     ]);
 
 app.config(configFunction);
@@ -22,11 +22,11 @@ function configFunction($stateProvider, $urlRouterProvider) {
         templateUrl: './views/login.html',
         controller: 'LoginController as vm'
     })
-    //
+
     // .state('signup', {
     //     url: '/signup',
     //     templateUrl: './views/signup.html',
-    //     controller: 'SignUpController'
+    //     controller: 'SignUpController as vm'
     // })
 
 }

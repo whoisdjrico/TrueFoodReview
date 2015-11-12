@@ -1,13 +1,9 @@
-<!--
-  <div ng-app='myApp'>
-    <div class="container" ui-view></div> -->
-
 
 <div class="jumbotron">
   <div class="container" ui-view>
     <div class="col-xs-offset-2 col-xs-8 main">
-      <form class="form" name="loginForm" novalidate="" >
-        
+      <form class="form" name="signupForm" novalidate="" >
+
         <div class="form-group form-group-lg">
           <label for="">Email</label>
           <input type="email" name="email" value="" class="form-control input-lg" ng-model='user.email' required="true">
@@ -20,7 +16,7 @@
 
         <div class="form-group form-group-lg">
           <!-- <input value="Log In" class="btn btn-info btn-lg text-center" type="submit"/> -->
-          <button  class="btn btn-info btn-lg text-center" type="submit" ng-click="vm.login()">Log In</button>
+          <button  class="btn btn-info btn-lg text-center" type="submit" ng-click="vm.signup()">Log In</button>
         </div>
       </form>
     </div>
