@@ -3,7 +3,8 @@ var app = angular
     'ui.router',
     'TrueFoodReview.HomeController',
     'TrueFoodReview.LoginController',
-    'TrueFoodReview.SignUpController'
+    'TrueFoodReview.SignUpController',
+    'TrueFoodReview.MapController'
     ]);
 
 app.config(configFunction);
