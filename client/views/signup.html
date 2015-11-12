@@ -1,0 +1,34 @@
+
+<div class="jumbotron">
+  <div class="container" ui-view>
+    <div class="col-xs-offset-2 col-xs-8 main">
+      <form class="form" name="signupForm" novalidate="" >
+
+        <div class="form-group form-group-lg">
+          <label for="">First Name</label>
+          <input type="text" name="first name" value="" class="form-control input-lg" ng-model='user.firstName' required="true">
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="">Last Name</label>
+          <input type="text" name="last name" value="" class="form-control input-lg" ng-model='user.lastName' required="true">
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="">Email</label>
+          <input type="email" name="email" value="" class="form-control input-lg" ng-model='user.email' required="true">
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="">Password</label>
+          <input type="password" name="password" value="" class="form-control input-lg" ng-model='user.password' required="true">
+        </div>
+
+        <div class="form-group form-group-lg">
+          <!-- <input value="Log In" class="btn btn-info btn-lg text-center" type="submit"/> -->
+          <button  class="btn btn-info btn-lg text-center btn-block" type="submit" ng-click="vm.signup()">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
