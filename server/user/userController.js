@@ -1,9 +1,10 @@
 var User = require('./userModel');
+var bodyParser = require('body-parser');
 
 function errorVerify (err, user) {
   if (err) {
     //returns user to 'home', 'index', or 'login' page
-    res.redirect('../../client/index.html');
+    res.redirect('/signup');
   }
   //forwards user to application page
   next();
@@ -31,7 +32,8 @@ var userController = {
         email: req.body.email,
         password: req.body.password
       },
-       errorVerify
+      //the function below is located at the top of the file as a help function
+      errorVerify
     );
   }
 
