@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style type='text/css'>
+    #map {height: 100%}
+  </style>
   <meta charset="UTF-8">
   <title>TrueFoodReview</title>
   <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
@@ -24,7 +27,6 @@
 <body>
 <div ng-app='myApp'>
 
-
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
@@ -38,16 +40,6 @@
       &nbsp;
       <button type="button" class="btn btn-info navbar-btn" ng-show="isUserLoggedIn"><a href="#/logout" >Logout</a></button>
 
-        <!-- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/data">Data</a></li>
-            <li><a href="/yelp">Yelp</a></li>
-            <li><a href="/foursquare">FourSquare</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li> -->
       </ul>
     </div>
   </nav>
@@ -56,37 +48,119 @@
     </div>
   </div>
 
-  <!-- <div id='map'></div>
-  <div class="container">
-    <div id="googft-mapCanvas" ></div>
-    <input id="googft-legend-open" style="display:none" type="button" value="Legend"></input>
-    <div id="googft-legend">
-      <p id="googft-legend-title" class="special">Rating</p>
-      <div>
-        <img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAi0lEQVR42mNgQIAoIF4NxGegdCCSHAMzEC+NijL7v3p1+v8zZ6rAdGCg4X+g+EyYorS0NNv////PxMCxsRYghbEgRQcOHCjGqmjv3kKQor0gRQ8fPmzHquj27WaQottEmxQLshubopAQI5CiEJjj54N8t3FjFth369ZlwHw3jQENgMJpIzSc1iGHEwB8p5qDBbsHtAAAAABJRU5ErkJggg=="/>
-        <span class="googft-legend-range">0 to 2</span>
-      </div>
-      <div>
-        <img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAiklEQVR42mNgQIAoIF4NxGegdCCSHAMzEC+NUlH5v9rF5f+ZoCAwHaig8B8oPhOmKC1NU/P//7Q0DByrqgpSGAtSdOCAry9WRXt9fECK9oIUPXwYFYVV0e2ICJCi20SbFAuyG5uiECUlkKIQmOPng3y30d0d7Lt1bm4w301jQAOgcNoIDad1yOEEAFm9fSv/VqtJAAAAAElFTkSuQmCC"/>
-        <span class="googft-legend-range">2 to 3</span>
-      </div>
-      <div>
-        <img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAi0lEQVR42mNgQIAoIF4NxGegdCCSHAMzEC+NMov6vzp99f8zVWfAdKBh4H+g+EyYorQ027T//2f+x8CxFrEghbEgRQcOFB/Aqmhv4V6Qor0gRQ8ftj/Equh2822QottEmxQLshubohCjEJCiEJjj54N8tzFrI9h36zLWwXw3jQENgMJpIzSc1iGHEwBt95qDejjnKAAAAABJRU5ErkJggg=="/>
-        <span class="googft-legend-range">3 to 3.5</span>
-      </div>
-      <div>
-        <img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAiklEQVR42mNgQIAoIF4NxGegdCCSHAMzEC81M4v6n56++n9V1RkwbWgY+B8oPhOmKM3WNu3/zJn/MbCFRSxIYSxI0YHi4gNYFRUW7gUp2gtS9LC9/SFWRc3Nt0GKbhNtUizIbmyKjIxCQIpCYI6fD/JdVtZGsO8yMtbBfDeNAQ2AwmkjNJzWIYcTAMk+i9OhipcQAAAAAElFTkSuQmCC"/>
-        <span class="googft-legend-range">3.5 to 4</span>
-      </div>
-      <div>
-        <img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAiElEQVR42mNgQIAoIF4NxGegdCCSHAMzEC81izL7n746/X/VmSowbRho+B8oPhOmKM02zfb/TCzQItYCpDAWpOhA8YFirIoK9xaCFO0FKXrY/rAdq6Lm280gRbeJNikWZDc2RUYhRiBFITDHzwf5LmtjFth3GesyYL6bxoAGQOG0ERpO65DDCQDX7ovT++K9KQAAAABJRU5ErkJggg=="/>
-        <span class="googft-legend-range">4 to 5</span>
-      </div>
-      <input id="googft-legend-close" style="display:none" type="button" value="Hide"></input>
-    </div>
-  </div> -->
-  
-  <script src="./map.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI_64KA1ywM_tFnCa2s-SPB5RLcYVRZ4Q&callback=initMap"></script>
-</body>
+  <script type="text/javascript">
+
+var map;
+var openWindow;
+
+//Yellow, Red, Pink, Purple, Green
+//0-2, 2-3, 3-3.5, 3.5-4, 4-5
+//FFFF42, F9032A, D0368D, 8434B0, B4EF3E
+
+function colorPicker(num) {
+console.log(num);
+if (num <= 2) {
+  console.log('FFFF42');
+  return '#FFFF42';
+} else if (num > 2 && num <= 3) {
+  console.log('F9032A');
+  return '#F9032A';
+} else if (num > 3 && num <= 3.5) {
+  console.log('D0368D');
+  return '#D0368D';
+} else if (num > 3.5 && num <= 4) {
+  console.log('8434B0');
+  return '#8434B0';
+} else if (num > 4 && num <= 5) {
+  console.log('B4EF3E');
+  return '#B4EF3E';
+}
+}
+
+function addCircles() {
+var query = {
+  url: 'https://www.googleapis.com/fusiontables/v2/query?sql=',
+  sql: 'SELECT+*+FROM+',
+  table: '1997wo1poMe6iv7VXz1P5Dj1fkO-vud48QgNZwu1J',
+  key: 'AIzaSyCWd4CkCZ2WLm1Hupxf7h0D2z3r_m7EX7U'
+};
+
+$.ajax({
+  type: 'GET',
+  url: query.url + query.sql + query.table + '&key=' + query.key,
+  success: function(data) {
+    data.rows.sort(function(a,b){
+      return b[2] - a[2];
+    }).forEach(createSpot);
+  },
+  dataType: 'json'
+});
+}
+
+function createSpot (array) {
+var spotCircle = new google.maps.Circle({
+  strokeColor: colorPicker(array[1]),
+  strokeOpacity: 0.8,
+  strokeWeight: 0,
+  fillColor: colorPicker(array[1]),
+  fillOpacity: 0.4,
+  map: map,
+  center: {lat: array[3], lng: array[4]},
+  radius: Math.sqrt(array[2]) * 15
+});
+
+spotCircle.prototype = new google.maps.MVCObject();
+
+var infowindow = new google.maps.InfoWindow({
+  content: '<b>Name: </b>' + array[0] + '<br>' +
+  '<b>Rating: </b>' + array[1] + '<br>' +
+  '<b>Review Count: </b>' + array[2] + '<br>' +
+  '<b>Lat: </b>' + array[3] + '<br>' +
+  '<b>Long: </b>' + array[4] + '<br>' +
+  '<b>Address: </b>' + array[5] + '<br>' +
+  '<b>City: </b>' + array[6] + '<br>' +
+  '<b>State: </b>' + array[7] + '<br>' +
+  '<b>Zip Code: </b>' + array[8] + '<br>',
+  position: {lat: array[3], lng: array[4]}
+});
+
+spotCircle.addListener('click',function(event) {
+  if (openWindow) {
+    openWindow.close();
+  }
+  infowindow.open(map,spotCircle);
+  openWindow = infowindow;
+});
+
+}
+
+function initMap() {
+if(!document.getElementById('map')) {
+  console.log('Map not present');
+  setTimeout(initMap,1000);
+} else {
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 33.97914, lng: -118.41480705731},
+      zoom: 13
+    });
+
+    addCircles();
+
+    var layer = new google.maps.FusionTablesLayer({
+      query: {
+        select: "col4",
+          from: "1997wo1poMe6iv7VXz1P5Dj1fkO-vud48QgNZwu1J"
+      }
+    });
+
+    layer.setMap(map);
+  }
+}
+
+  </script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd4CkCZ2WLm1Hupxf7h0D2z3r_m7EX7U&callback=initMap">
+  </script>
+
 </html>

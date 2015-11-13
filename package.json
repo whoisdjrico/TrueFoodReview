@@ -37,7 +37,6 @@
     "yelp": "^0.2.0"
   },
   "devDependencies": {
-
     "path": "^0.12.7",
     "supertest": "^1.1.0",
     "tape": "^4.2.2"
