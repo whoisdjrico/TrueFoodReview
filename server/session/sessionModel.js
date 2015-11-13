@@ -9,12 +9,12 @@ var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
 var Session = sequelize.define('session',
   {
     username: {
-      type: String,
+      type: Sequelize.String,
       unique: true,
       field: 'username'
     },
     cookieID: {
-      type: String,
+      type: Sequelize.String,
       field: 'cookieID'
     }
   },
@@ -22,7 +22,5 @@ var Session = sequelize.define('session',
     freezeTableName: true
   }
 );
-
-Session.sync();
 
 module.exports = Session;

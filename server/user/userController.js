@@ -13,11 +13,13 @@ var userController = {
 
   createUser: function (req, res, next) {
     //create new user in Postgres database 'mydb', 'student', 'ilovetesting'
-    User.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.password
+    User.sync().then(function () {
+      User.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password
+      });
     });
     next();
   },

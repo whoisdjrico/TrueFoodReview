@@ -15,8 +15,10 @@ var sessionController = {
     var obj = {};
     obj.cookieId = req.body.username + req.body.password;
     obj.expires = new Date();
-    Session.create(obj, function (err) {
-      res.redirect('/main');
+    Session.sync().then(function () {
+      Session.create(obj, function (err) {
+        res.redirect('/main');
+      });
     });
   }
 

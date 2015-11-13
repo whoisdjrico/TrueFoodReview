@@ -15,6 +15,7 @@ app.get('/fusion', fusionTableController.getData);
 
 app.get('/data', yelpController.getData, foursquareController.getData, dataController);
 app.use(express.static(path.join(__dirname, './../client/')));
+
 app.get('/', function(req, res) {
   res.render('signup.html');
 });
@@ -27,7 +28,7 @@ app.post('/login', userController.verifyUser, cookiesController.setCookie, sessi
   res.redirect('/main');
 });
 
-app.get('main', sessionController.isLoggedIn, function (req, res) {
+app.get('/main', sessionController.isLoggedIn, function (req, res) {
   res.render('/client/main.html');
 });
 
