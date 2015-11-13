@@ -23,4 +23,5 @@ var Session = sequelize.define('session',
   }
 );
 
+
 module.exports = Session;
