@@ -1,14 +1,14 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var yelpController = require('./yelpController');
-var dataController = require('./dataController');
-var fusionTableController = require('./fusionTableController');
-var foursquareController = require('./foursquareController');
+var yelpController = require('./yelpController.js');
+var dataController = require('./dataController.js');
+var fusionTableController = require('./fusionTableController.js');
+var foursquareController = require('./foursquareController.js');
 var config = require('../config.json');
-var userController = require('./user/userController');
-var sessionController = require('/session/sessionController');
-var cookiesController = require('/cookies/cookiesController');
+var userController = require('./user/userController.js');
+var sessionController = require('./session/sessionController.js');
+var cookiesController = require('./cookies/cookiesController.js');
 
 // Test to get data from the fusion table
 app.get('/fusion', fusionTableController.getData);

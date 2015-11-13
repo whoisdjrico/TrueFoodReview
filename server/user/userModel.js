@@ -35,4 +35,4 @@ var User = sequelize.define('user',
 
 User.sync();
 
-module.exports = userModel;
+module.exports = User;

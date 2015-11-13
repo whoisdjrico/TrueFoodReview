@@ -25,4 +25,4 @@ var Session = sequelize.define('session',
 
 Session.sync();
 
-module.exports = sessionModel;
+module.exports = Session;
