@@ -9,12 +9,12 @@ var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
 var Session = sequelize.define('session',
   {
     username: {
-      type: Sequelize.String,
+      type: Sequelize.STRING,
       unique: true,
       field: 'username'
     },
     cookieID: {
-      type: Sequelize.String,
+      type: Sequelize.STRING,
       field: 'cookieID'
     }
   },

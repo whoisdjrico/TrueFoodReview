@@ -9,22 +9,22 @@ var sequelize = new Sequelize('mydb', 'student', 'ilovetesting', {
 var User = sequelize.define('user',
   {
     firstName: {
-      type: Sequelize.String,
+      type: Sequelize.STRING,
       unique: true,
-      field: 'first name '
+      field: 'first name'
     },
     LastName: {
-      type: Sequelize.String,
+      type: Sequelize.STRING,
       unique: true,
       field: 'last name'
     },
     email: {
-      type: Sequelize.String,
+      type: Sequelize.STRING,
       unique: true,
       field: 'email'
     },
     password: {
-      type: Sequelize.String,
+      type: Sequelize.STRING,
       field: 'password'
     }
   },
