@@ -25,16 +25,24 @@ app.get('/', function(req, res) {
   res.render('signup.html');
 });
 
-app.post('/signup', userController.createUser, userController.verifyUser, cookiesController.setCookie, sessionController.startSession, function (req, res) {
-  res.redirect('/main');
+app.post('/signup',
+  userController.createUser, userController.verifyUser, cookiesController.setCookie,
+  // sessionController.startSession,
+  function (req, res) {
+    console.log('TESTTTTT')
+    res.redirect('/main');
 });
 
 app.post('/login', userController.verifyUser, cookiesController.setCookie, sessionController.startSession, function (req, res) {
   res.redirect('/main');
 });
 
-app.get('/main', sessionController.isLoggedIn, function (req, res) {
-  res.render('/client/main.html');
+//can't render
+app.get('/main',
+// sessionController.isLoggedIn,
+function (req, res) {
+  console.log('DDDDJJJJJJ');
+  res.sendFile(path.join(__dirname, './../client/views/main.html'));
 });
 
 app.listen(3000);

@@ -13,7 +13,7 @@ var User = sequelize.define('user',
       unique: true,
       field: 'first name'
     },
-    LastName: {
+    lastName: {
       type: Sequelize.STRING,
       unique: true,
       field: 'last name'

@@ -13,6 +13,7 @@ var userController = {
 
   createUser: function (req, res, next) {
     //create new user in Postgres database 'mydb', 'student', 'ilovetesting'
+    console.log('CREATE_USER');
     User.sync().then(function () {
       User.create({
         firstName: req.body.firstName,
@@ -28,23 +29,39 @@ var userController = {
 
   verifyUser: function (req, res, next) {
     //searches Postgres database for username and password to verify and redirect user
-    User.find(
+    console.log('VERIFY_USER__XX');
+    // User.find(
+    console.log('BODYCHECK', req.body);
+    var query = User.findAll({
+      where:
+
       {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         password: req.body.password
-      },
-      //the function below is located at the top of the file as a help function
-      function (err, user) {
-        if (err) {
-          //returns user to 'home', 'index', or 'login' page
-          res.redirect('/signup');
-        }
-        //forwards user to application page
-        next();
       }
-    );
+      // ,
+
+    })
+    .then(function (data) {
+      console.log('RUNNER', data);
+      console.log('PROMISE');
+    });
+
+      // //the function below is located at the top of the file as a help function
+      // function (err, user) {
+      //   if (err) {
+      //     console.log('VERIFY_USER_ERROR');
+      //     //returns user to 'home', 'index', or 'login' page
+      //     res.redirect('/signup');
+      //   }
+      //   console.log('VERIFY_USER_YY');
+      //   //forwards user to application page
+      //   next();
+      // }
+
+    // );
   }
 
 };
