@@ -17,7 +17,7 @@ var sessionController = {
     obj.expires = new Date();
     Session.sync().then(function () {
       Session.create(obj, function (err) {
-        res.redirect('/main');
+        console.log(err);
       });
     });
   }

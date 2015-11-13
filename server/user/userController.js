@@ -19,6 +19,8 @@ var userController = {
         lastName: req.body.lastName,
         email: req.body.email,
         password: req.body.password
+      }, function (err) {
+        console.log(err);
       });
     });
     next();
