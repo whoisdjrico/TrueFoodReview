@@ -1,8 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TrueFoodReview</title>
+  <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./lib/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <!-- // <script type="text/javascript" src="./factories/infoFactory.js"></script> -->
+  <script type="text/javascript" src="./controllers/homeController.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <link rel="stylesheet" type="text/css" href="animate.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+   <link rel="stylesheet" href="style.css">
+   <script src="//cdn.jsdelivr.net/rsvp/3.0.6/rsvp.js"></script>
+</head>
 
-  <h1>Hi {{vm.user.firstName}}!</h1>
-  <p>You're logged in!!</p>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">True Food Review</a>
+      </div>
+​
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/data">Data</a></li>
+              <li><a href="/yelp">Yelp</a></li>
+              <li><a href="/foursquare">FourSquare</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+​
+  <div ng-app='myApp'>
+    <div class="container" ui-view></div>
+  </div>
 
-  <div id='map'>This is where the map is supposed to go</div>
+  <div id='map'></div>
   <div class="container">
     <div id="googft-mapCanvas" ></div>
     <input id="googft-legend-open" style="display:none" type="button" value="Legend"></input>
@@ -31,3 +73,7 @@
       <input id="googft-legend-close" style="display:none" type="button" value="Hide"></input>
     </div>
   </div>
+  <script src="./map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI_64KA1ywM_tFnCa2s-SPB5RLcYVRZ4Q&callback=initMap"></script>
+</body>
+</html>
