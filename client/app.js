@@ -15,7 +15,8 @@ function configFunction($stateProvider, $urlRouterProvider) {
     .state('state1', {
       url: '/',
       templateUrl: './partials/home.html',
-      controller: 'HomeController'
+      controller: 'HomeController',
+      controllerAs: 'vm'
     })
 
     .state('login', {
@@ -38,5 +39,13 @@ function configFunction($stateProvider, $urlRouterProvider) {
         controller: 'MapController',
         controllerAs: 'vm'
     })
+
+    // .state('home', {
+    //     url: '/home',
+    //     templateUrl: './views/home.html',
+    //     controller: 'HomeController',
+    //     controllerAs: 'vm'
+    // })
+
 
 }

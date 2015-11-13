@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <style type='text/css'>
-    #map {height: 100%}
-  </style>
-  <meta charset="UTF-8">
-  <title>TrueFoodReview</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="map.js"></script>
-  <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
-  <script type="text/javascript" src="./lib/angular-route/angular-route.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-  <!-- // <script type="text/javascript" src="./factories/infoFactory.js"></script> -->
-  <script type="text/javascript" src="./controllers/homeController.js"></script>
-  <script type="text/javascript" src="./controllers/loginController.js"></script>
-  <script type="text/javascript" src="./controllers/signupController.js"></script>
-  <script type="text/javascript" src="./controllers/mapController.js"></script>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./app.js"></script>
-  <link rel="stylesheet" type="text/css" href="animate.css">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="//cdn.jsdelivr.net/rsvp/3.0.6/rsvp.js"></script>
-</head>
 
-<body>
-<div ng-app='myApp'>
+  <head>
+    <style type='text/css'>
+      #map {
+        height: 100%
+      }
+    </style>
+    <meta charset="UTF-8">
+    <title>TrueFoodReview</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="map.js"></script>
+    <script type="text/javascript" src="./lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <!-- // <script type="text/javascript" src="./factories/infoFactory.js"></script> -->
+    <script type="text/javascript" src="./controllers/homeController.js"></script>
+    <script type="text/javascript" src="./controllers/loginController.js"></script>
+    <script type="text/javascript" src="./controllers/signupController.js"></script>
+    <script type="text/javascript" src="./controllers/mapController.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <link rel="stylesheet" type="text/css" href="animate.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="//cdn.jsdelivr.net/rsvp/3.0.6/rsvp.js"></script>
+  </head>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">True Food Review</a>
+  <body>
+    <div ng-app='myApp'>
+
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">True Food Review</a>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <button type="button" class="btn btn-info navbar-btn" ng-show="!isUserLoggedIn"><a href="#/login">Log In</a></button>
+            &nbsp;
+            <button type="button" class="btn btn-info navbar-btn" ng-show="!isUserLoggedIn"><a href="#/signup">Sign Up</a></button>
+            &nbsp;
+            <button type="button" class="btn btn-info navbar-btn" ng-show="isUserLoggedIn"><a href="#/logout">Logout</a></button>
+
+          </ul>
+        </div>
+      </nav>
+      ​
+      <div class="container" ui-view>
       </div>
-
-    <ul class="nav navbar-nav navbar-right">
-      <button type="button" class="btn btn-info navbar-btn" ng-show="!isUserLoggedIn"><a href="#/login">Log In</a></button>
-      &nbsp;
-      <button type="button" class="btn btn-info navbar-btn" ng-show="!isUserLoggedIn"><a href="#/signup" >Sign Up</a></button>
-      &nbsp;
-      <button type="button" class="btn btn-info navbar-btn" ng-show="isUserLoggedIn"><a href="#/logout" >Logout</a></button>
-
-      </ul>
     </div>
-  </nav>
-​
-  <div class="container" ui-view>
-    </div>
-  </div>
 
-  <script type="text/javascript"></script>
-  <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd4CkCZ2WLm1Hupxf7h0D2z3r_m7EX7U&callback=initMap">
-  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWd4CkCZ2WLm1Hupxf7h0D2z3r_m7EX7U&callback=initMap">
+    </script>
+  </body>
 
 </html>
