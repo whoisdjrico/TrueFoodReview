@@ -6,8 +6,8 @@ var app = angular
 
   function SignUpController($scope, $http) {
       var vm = this;
-      vm.signup = function() {
-      console.log("Sending Request to server...");
+      vm.signup = function(event) {
+      console.log('Test');
 
       var data = $.param({
             firstName: vm.firstName,
@@ -21,16 +21,16 @@ var app = angular
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
           }
       }
-
-      $http.post('/signup', data, config)
-        .success(function (data, status, headers, config) {
-            vm.PostDataResponse = data;
-      })
-        .error(function (data, status, header, config) {
-            vm.ResponseDetails = "Data: " + data +
-              "<hr />status: " + status +
-              "<hr />headers: " + header +
-              "<hr />config: " + config;
-    });
+      console.log(data);
+      $http.post('/signup', data, config);
+      //   .success(function (data, status, headers, config) {
+      //       vm.PostDataResponse = data;
+      // })
+      //   .error(function (data, status, header, config) {
+      //       vm.ResponseDetails = "Data: " + data +
+      //         "<hr />status: " + status +
+      //         "<hr />headers: " + header +
+      //         "<hr />config: " + config;
+    // });
   };
 };
