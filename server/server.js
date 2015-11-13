@@ -7,8 +7,8 @@ var fusionTableController = require('./fusionTableController');
 var foursquareController = require('./foursquareController');
 var config = require('../config.json');
 var userController = require('./user/userController');
-var sessionController = require('/session/sessionController');
-var cookiesController = require('/cookies/cookiesController');
+var sessionController = require('./session/sessionController');
+var cookiesController = require('./cookies/cookiesController');
 
 // Test to get data from the fusion table
 app.get('/fusion', fusionTableController.getData);

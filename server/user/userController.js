@@ -1,5 +1,4 @@
 var User = require('./userModel');
-var bodyParser = require('body-parser');
 
 function errorVerify (err, user) {
   if (err) {
@@ -33,7 +32,14 @@ var userController = {
         password: req.body.password
       },
       //the function below is located at the top of the file as a help function
-      errorVerify
+      function (err, user) {
+        if (err) {
+          //returns user to 'home', 'index', or 'login' page
+          res.redirect('/signup');
+        }
+        //forwards user to application page
+        next();
+      }
     );
   }
 
