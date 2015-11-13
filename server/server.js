@@ -9,6 +9,11 @@ var config = require('../config.json');
 var userController = require('./user/userController.js');
 var sessionController = require('./session/sessionController.js');
 var cookiesController = require('./cookies/cookiesController.js');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+app.use(bodyParser.urlencoded());
 
 // Test to get data from the fusion table
 app.get('/fusion', fusionTableController.getData);
